@@ -5,8 +5,10 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 2.2.0
     </div>
-    <strong>Copyright &copy; 2021 POS System<a href="http://fordev22.com/">fordev22</a>.</strong> All rights
-    reserved.
+    <?php echo $_SESSION["mem_id"]."".$_SESSION["mem_name"]."".$_SESSION["ref_l_id"]."
+    ".$_SESSION["mem_img"]."".$_SESSION["mem_address"]; ?>
+    <!-- <strong>Copyright &copy; 2021 POS System<a href="http://fordev22.com/">fordev22</a>.</strong> All rights
+    reserved. -->
   </footer>
 
   <!-- Control Sidebar -->

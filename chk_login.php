@@ -1,8 +1,8 @@
 <?php 
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
-exit();
+// echo "<pre>";
+// print_r($_POST);
+// echo "</pre>";
+// exit();
 session_start();
         if(isset($_POST['mem_username'])){
         //connection

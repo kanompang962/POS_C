@@ -122,3 +122,14 @@
     })
   </script>
 <?php } ?>
+
+<?php if (isset($_GET['mem_del'])) { ?>
+  <script>
+    Swal.fire({
+      title: 'สำเร็จ',
+      text: 'ลบข้อมูล | สำเร็จ',
+      icon: 'success',
+      confirmButtonText: 'ตกลง'
+    })
+  </script>
+<?php } ?>

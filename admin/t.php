@@ -4,11 +4,7 @@ include('../condb.php');
 // print_r($_POST);
 // print_r($_FILES);
 // echo "</pre>";
-
 // exit();
-
-
-
 if (isset($_POST['member']) && $_POST['member'] == "add") {
     $ref_l_id = mysqli_real_escape_string($condb, $_POST["ref_l_id"]);
     $mem_name = mysqli_real_escape_string($condb, $_POST["mem_name"]);
@@ -103,7 +99,6 @@ if (isset($_POST['member']) && $_POST['member'] == "add") {
 	ref_l_id='$ref_l_id',
 	
 	mem_name='$mem_name',
-
 	mem_username='$mem_username',
 	mem_password='$mem_password',
 	mem_img='$newname'
@@ -126,9 +121,9 @@ if (isset($_POST['member']) && $_POST['member'] == "add") {
     $mem_id  = mysqli_real_escape_string($condb, $_GET["mem_id"]);
     $sql = "DELETE FROM tbl_member WHERE mem_id=$mem_id";
     $result = mysqli_query($condb, $sql) or die("Error in query: $sql " . mysqli_error());
-    mysqli_close($condb);
     echo "<script type='text/javascript'>";
-    echo "window.location = 'list_mem.php?mem_del=mem_del'; ";
-    echo "</script>";
+    echo "Window.location = 'list_mem.php?mem_del = mem_del';";
+    echo "</script>";.
+    //mysqli_close($condb);
 } else {
 }

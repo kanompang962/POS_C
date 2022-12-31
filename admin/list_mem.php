@@ -58,11 +58,12 @@ $rs_member = mysqli_query($condb, $query_member);
                                     <td><?php echo $row_member['mem_name']; ?></td>
                                     <td>
                                         <p style="margin-bottom: 10px;">
-                                            <a href="mem_edit.php?mem_id=<?php  echo $row_member["mem_id"]; ?>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> edit</a>
+                                            <a href="mem_edit.php?mem_id=<?php echo $row_member["mem_id"]; ?>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> edit</a>
                                         </p>
                                         <!-- <a href="level.php?ace=edit&l_id=<?php echo $row_level['l_id']; ?>" class="btn btn-warning btn-xs"> edit</a> -->
                                     </td>
-                                    <td><a href="" class="del-btn btn btn-danger"><i class="fas fas fa-trash"></i> del</a></td>
+                                    <td><a href="member_db.php?mem_id=<?php echo $row_member['mem_id']; ?>&&member=del" class="del-btn btn btn-danger" onclick="return confirm('ยืนยันการลบ !!!!!!')">
+                                            <i class="fas fas fa-trash"></i> del</a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>

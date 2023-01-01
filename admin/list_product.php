@@ -81,7 +81,7 @@ $rs_product = mysqli_query($condb, $query_product);
 
                                         <!-- <a href="level.php?ace=edit&l_id=<?php echo $row_product['l_id']; ?>" class="btn btn-warning btn-xs"> edit</a> -->
                                     </td>
-                                    <td><a href="product_db.php?p_id=<?php echo $row_product['p_id']; ?>" class="del-btn btn btn-danger"><i class="fas fas fa-trash"></i> del</a></td>
+                                    <td><a href="product_db.php?p_id=<?php echo $row_product['p_id']; ?>&&product=del" class="del-btn btn btn-danger"><i class="fas fas fa-trash"></i> del</a></td>
 
                                 </tr>
                             <?php
@@ -127,11 +127,7 @@ $rs_product = mysqli_query($condb, $query_product);
                             })
                         }
                     </script>
-
-
-
                 </div>
-
             </div>
         </div>
         <div class="card-footer">

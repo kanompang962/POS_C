@@ -155,3 +155,25 @@
     })
   </script>
 <?php } ?>
+
+<?php if (isset($_GET['product_edit'])) { ?>
+  <script>
+    Swal.fire({
+      title: 'สำเร็จ',
+      text: 'แก้ไขข้อมูล | <?php echo $row['p_name'] ?> สำเร็จ',
+      icon: 'success',
+      confirmButtonText: 'ตกลง'
+    })
+  </script>
+<?php } ?>
+
+<?php if (isset($_GET['product_del'])) { ?>
+  <script>
+    Swal.fire({
+      title: 'สำเร็จ',
+      text: 'ลบข้อมูล | สำเร็จ',
+      icon: 'success',
+      confirmButtonText: 'ตกลง'
+    })
+  </script>
+<?php } ?>

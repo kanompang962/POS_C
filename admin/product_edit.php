@@ -46,7 +46,7 @@ $row = mysqli_fetch_array($rs_product);
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8">
-                    <form action="product_db.php" method="POST">
+                    <form action="product_db.php" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="product" value="edit">
                         <input type="hidden" name="p_id" value="<?php echo $row['p_id']; ?>">
                         <input name="file1" type="hidden" id="file1" value="<?php echo $row['p_img']; ?>" />

@@ -10,6 +10,7 @@ include('../condb.php');
 
 
 if (isset($_POST['member']) && $_POST['member'] == "add") {
+
     $ref_l_id = mysqli_real_escape_string($condb, $_POST["ref_l_id"]);
     $mem_name = mysqli_real_escape_string($condb, $_POST["mem_name"]);
     $mem_username = mysqli_real_escape_string($condb, $_POST["mem_username"]);
@@ -77,6 +78,7 @@ if (isset($_POST['member']) && $_POST['member'] == "add") {
         echo "</script>";
     }
 } elseif (isset($_POST['member']) && $_POST['member'] == "edit") {
+
     $mem_id = mysqli_real_escape_string($condb, $_POST["mem_id"]);
     $ref_l_id = mysqli_real_escape_string($condb, $_POST["ref_l_id"]);
     $mem_name = mysqli_real_escape_string($condb, $_POST["mem_name"]);
@@ -123,6 +125,7 @@ if (isset($_POST['member']) && $_POST['member'] == "add") {
         echo "</script>";
     }
 } elseif (isset($_GET['member']) && $_GET['member'] == "del") {
+
     $mem_id  = mysqli_real_escape_string($condb, $_GET["mem_id"]);
     $sql = "DELETE FROM tbl_member WHERE mem_id=$mem_id";
     $result = mysqli_query($condb, $sql) or die("Error in query: $sql " . mysqli_error());
@@ -131,6 +134,7 @@ if (isset($_POST['member']) && $_POST['member'] == "add") {
     echo "window.location = 'list_mem.php?mem_del=mem_del'; ";
     echo "</script>";
 } else {
+
     echo "<script type='text/javascript'>";
     echo "window.location = 'list_mem.php?mem_no=mem_no'; ";
     echo "</script>";

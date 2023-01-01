@@ -131,4 +131,7 @@ if (isset($_POST['member']) && $_POST['member'] == "add") {
     echo "window.location = 'list_mem.php?mem_del=mem_del'; ";
     echo "</script>";
 } else {
+    echo "<script type='text/javascript'>";
+    echo "window.location = 'list_mem.php?mem_no=mem_no'; ";
+    echo "</script>";
 }

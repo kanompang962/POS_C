@@ -79,7 +79,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="" class="nav-link <?php if ($menu == "product") {
+          <a href="list_product.php" class="nav-link <?php if ($menu == "product") {
                                         echo "active";
                                       } ?> ">
             <i class="nav-icon fa fa-box-open"></i>

@@ -133,3 +133,25 @@
     })
   </script>
 <?php } ?>
+
+<?php if (isset($_GET['mem_no'])) { ?>
+  <script>
+    Swal.fire({
+      title: 'Error',
+      text: 'ผิดผลาด',
+      icon: 'error',
+      confirmButtonText: 'ตกลง'
+    })
+  </script>
+<?php } ?>
+
+<?php if (isset($_GET['product_add'])) { ?>
+  <script>
+    Swal.fire({
+      title: 'สำเร็จ',
+      text: 'บันทึกข้อมูลสำเร็จ',
+      icon: 'success',
+      confirmButtonText: 'ตกลง'
+    })
+  </script>
+<?php } ?>

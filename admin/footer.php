@@ -77,7 +77,7 @@
   });
 </script>
 
-<!-- http://fordev22.com/ -->
+
 <?php if (isset($_GET['mem_editp'])) { ?>
   <script>
     Swal.fire({
@@ -173,6 +173,17 @@
       title: 'สำเร็จ',
       text: 'ลบข้อมูล | สำเร็จ',
       icon: 'success',
+      confirmButtonText: 'ตกลง'
+    })
+  </script>
+<?php } ?>
+
+<?php if (isset($_GET['product_no'])) { ?>
+  <script>
+    Swal.fire({
+      title: 'Error',
+      text: 'ไม่สามารถเข้าถึงได้',
+      icon: 'error',
       confirmButtonText: 'ตกลง'
     })
   </script>

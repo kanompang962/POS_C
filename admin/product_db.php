@@ -111,4 +111,7 @@ if (isset($_POST['product']) && $_POST['product'] == "add") {
     echo "window.location = 'list_product.php?product_del=product_del'; ";
     echo "</script>";
 } else {
+    echo "<script type='text/javascript'>";
+    echo "window.location = 'list_product.php?product_no=product_no';";
+    echo "</script>";
 }

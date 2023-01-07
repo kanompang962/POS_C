@@ -100,7 +100,7 @@ $rs_product = mysqli_query($condb, $query_product);
                             e.preventDefault();
                             const href = $(this).attr('href')
                             Swal.fire({
-                                imageUrl: '../logo_fordev22_2.png',
+                                // imageUrl: 'https://www.pngall.com/wp-content/uploads/5/Delete-Bin-Trash-PNG.png',
                                 imageWidth: 250,
                                 //imageHeight: 100,
                                 title: 'Are you sure to delete?',

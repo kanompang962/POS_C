@@ -3,12 +3,12 @@ include("../condb.php");
 //error_reporting( error_reporting() & ~E_NOTICE );
 session_start();
 
-echo "<pre>";
-print_r($_SESSION);
-print_r($_SESSION['cart']);
-echo "<br>";
-print_r($_POST);
-echo "</pre>";
+// echo "<pre>";
+// print_r($_SESSION);
+// print_r($_SESSION['cart']);
+// echo "<br>";
+// print_r($_POST);
+// echo "</pre>";
 // exit();
 
 
@@ -46,7 +46,7 @@ $order_date = Date("Y-m-d G:i:s");
 
 
 //บันทึกการสั่งซื้อลงใน order
-// mysqli_query($condb, "BEGIN");
+mysqli_query($condb, "BEGIN");
 $sql1    = "INSERT INTO tbl_order 
 	VALUES
 	(null, 
@@ -67,8 +67,8 @@ $sql1    = "INSERT INTO tbl_order
 $query1    = mysqli_query($condb, $sql1)
     or die("Error : " . mysqlierror($sql1));
 
-echo $sql1;
-echo "<hr/>";
+// echo $sql1;
+// echo "<hr/>";
 // exit();
 
 //ฟังก์ชั่น MAX() จะคืนค่าที่มากที่สุดในคอลัมน์ที่ระบุ ออกมา หรือจะพูดง่ายๆก็ว่า ใช้สำหรับหาค่าที่มากที่สุด นั่นเอง.
@@ -79,7 +79,7 @@ $query2    = mysqli_query($condb, $sql2) or die("Error : " . mysqlierror($sql2))
 $row = mysqli_fetch_array($query2);
 $order_id = $row["order_id"];
 
-echo "order_id" . " = " . $row["order_id"];
+// echo "order_id" . " = " . $row["order_id"];
 // exit();
 
 foreach ($_SESSION['cart'] as $p_id => $qty) {
@@ -91,10 +91,10 @@ foreach ($_SESSION['cart'] as $p_id => $qty) {
 
     $count = mysqli_num_rows($query3); //นับว่ามีการqueryได้ไหม
 
-    echo "<pre>";
-    print_r($row3);
-    echo "</pre>";
-    echo $total;
+    // echo "<pre>";
+    // print_r($row3);
+    // echo "</pre>";
+    // echo $total;
     //exit();
     $sql4    = "INSERT INTO tbl_order_detail 
 				   VALUES (null,
@@ -123,5 +123,25 @@ foreach ($_SESSION['cart'] as $p_id => $qty) {
     }
     /*   stock  */
 }
+// exit();
+//clear ของในตะกร้า
+//ถ้าทำงานครบตามเงื่อนไข
+if ($query1 && $query4) {
+    mysqli_query($condb, "COMMIT"); //จะ COMMIT บันทึกสำเร็จคือบันทึก sql1 กับ sql4 แล้ว
+    $msg = "บันทึกข้อมูลเรียบร้อยแล้ว ";
 
-exit();
+    foreach ($_SESSION['cart'] as $p_id) //วนซ้ำ $_SESSION['cart'] เพื่อเช็คเตรียมจะunset
+    {
+        //unset($_SESSION['cart'][$p_id]);
+        unset($_SESSION['cart']); //unset($_SESSION['cart'][$p_id]);
+    }
+} else {
+    mysqli_query($condb, "ROLLBACK");
+    $msg = "บันทึกข้อมูลไม่สำเร็จ กรุณาติดต่อเจ้าหน้าที่ค่ะ ";
+}
+
+?>
+<script type="text/javascript">
+    //alert("<?php echo $msg; ?>");
+    window.location = 'index.php?order_id=<?php echo $order_id;?>&act=view&&save_ok=save_ok';
+</script>

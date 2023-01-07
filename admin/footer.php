@@ -5,8 +5,7 @@
   <div class="float-right d-none d-sm-block">
     <b>Version</b> 2.2.0
   </div>
-  <?php echo $_SESSION["mem_id"] . "" . $_SESSION["mem_name"] . "" . $_SESSION["ref_l_id"] . "
-    " . $_SESSION["mem_img"] . "" . $_SESSION["mem_address"]; ?>
+  <?php echo "POS_C BY 62011212091" ?>
   <!-- <strong>Copyright &copy; 2021 POS System<a href="http://fordev22.com/">fordev22</a>.</strong> All rights
     reserved. -->
 </footer>
@@ -184,6 +183,17 @@
       title: 'Error',
       text: 'ไม่สามารถเข้าถึงได้',
       icon: 'error',
+      confirmButtonText: 'ตกลง'
+    })
+  </script>
+<?php } ?>
+
+<?php if (isset($_GET['save_ok'])) { ?>
+  <script>
+    Swal.fire({
+      title: 'สำเร็จ',
+      text: 'บันทึกคำสั่งซื้อสำเร็จ',
+      icon: 'success',
       confirmButtonText: 'ตกลง'
     })
   </script>

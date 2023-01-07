@@ -46,7 +46,7 @@ $order_date = Date("Y-m-d G:i:s");
 
 
 //บันทึกการสั่งซื้อลงใน order
-mysqli_query($condb, "BEGIN");
+// mysqli_query($condb, "BEGIN");
 $sql1    = "INSERT INTO tbl_order 
 	VALUES
 	(null, 
@@ -112,6 +112,11 @@ foreach ($_SESSION['cart'] as $p_id => $qty) {
     for ($i = 0; $i < $count; $i++) {
         $have =  $row3['p_qty'];
         $stc = $have - $qty;
+
+        $sql5 = "UPDATE tbl_product SET  
+		     p_qty=$stc
+		     WHERE  p_id=$p_id ";
+        $query5 = mysqli_query($condb, $sql5) or die("Error : " . mysqlierror($sql5));
 
         echo "ยอดคงเหลือ" . $stc;
         echo "<hr>";

@@ -8,7 +8,7 @@
       <span class="brand-text font-weight-light">FD22 | POS System</span>
     </a> -->
   <a href="" class="brand-link bg-gray">
-    <img src="../assets/img/ffd2222.png" alt="AdminLTE Logo" class="brand-image">
+    <!-- <img src="../assets/img/ffd2222.png" alt="AdminLTE Logo" class="brand-image"> -->
     <span class="brand-text font-weight-light">FD22 | POS System</span>
   </a>
   <!-- Sidebar -->

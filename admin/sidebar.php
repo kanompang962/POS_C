@@ -62,28 +62,38 @@
             <p>Member </p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="" class="nav-link <?php if ($menu == "type") {
-                                        echo "active";
-                                      } ?> ">
+        <!-- <li class="nav-item">
+          <a href="" class="nav-link  ">
             <i class="nav-icon fa fa-copy"></i>
             <p>Type </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="" class="nav-link <?php if ($menu == "brand") {
-                                        echo "active";
-                                      } ?> ">
+          <a href="" class="nav-link  ">
             <i class="nav-icon fa fa-box"></i>
             <p>Brand </p>
           </a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a href="list_product.php" class="nav-link <?php if ($menu == "product") {
-                                        echo "active";
-                                      } ?> ">
+                                                        echo "active";
+                                                      } ?> ">
             <i class="nav-icon fa fa-box-open"></i>
             <p>Product </p>
+          </a>
+        </li>
+      </ul>
+      <hr>
+      <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+        <li class="nav-header">Dashboard</li>
+        <li class="nav-item">
+          <a href="report_p5.php" class="nav-link <?php if ($menu == "report_p5") {
+                                                    echo "active";
+                                                  } ?> ">
+            <i class="nav-icon fas fa-crown text-fuchsia"></i>
+            <p>5 อันดับสินค้าขายดี</p>
           </a>
         </li>
       </ul>
